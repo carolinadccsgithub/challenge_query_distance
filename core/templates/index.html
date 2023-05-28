@@ -1,0 +1,23 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django 1 - Index</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <div class="container">
+        <h1>Source</h1>
+        {% bootstrap_messages %}
+        <form action="{% url 'index' %}" method="post" class="form" autocomplete="off">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+                <button type="submit" class="btn btn-primary">Query Distance</button>
+            {% endbuttons %}
+        </form>
+    </div>
+{% bootstrap_javascript jquery='full' %}
+</body>
+</html>

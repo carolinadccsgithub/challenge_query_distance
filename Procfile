@@ -1,0 +1,1 @@
+web: gunicorn query_distance.wsgi --log-file -
